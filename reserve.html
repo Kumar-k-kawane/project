@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservation</title>
+    <style>
+        /* Global reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        /* Background Gradient */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            background-image: url(bg3.jpg);
+            margin-top: 10px;
+            /* height: 100vh; */
+        }
+
+        /* Main Container */
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.2s ease-out;
+            width: 100%;
+            max-width: 700px;
+           background: transparent;
+           backdrop-filter: blur(8px);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color:#FFF6E3;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-out;
+        }
+
+        label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        select, input[type="number"], input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            font-size: 1.1rem;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        select:focus, input[type="number"]:focus, input[type="date"]:focus {
+            border-color: #ff7e5f;
+        }
+
+        button {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease-in-out;
+            /* animation: bounce 1.5s infinite; */
+        }
+
+        button:hover {
+            background-color: #feb47b;
+        }
+
+        .total {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e4d4d4;
+            text-align: center;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        .exit:hover{
+            background-color: green;
+            margin-bottom: auto;
+           
+            
+        }
+        .e1{
+            position: relative;
+            top: -58px;
+            bottom: 0px;
+            right: 0px;
+            left: 269px;
+        }
+
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <h1>Hotel Reservation</h1>
+
+        <!-- Room Type Selection -->
+        <label for="roomType">Select Room Type:</label>
+        <select id="roomType">
+            <option value="100">Standard Room - $100/night</option>
+            <option value="150">Deluxe Room - $150/night</option>
+            <option value="200">Suite Room - $200/night</option>
+        </select>
+
+        <!-- Date Pickers for Check-In and Check-Out -->
+        <label for="checkIn">Check-In Date:</label>
+        <input type="date" id="checkIn">
+
+        <label for="checkOut">Check-Out Date:</label>
+        <input type="date" id="checkOut">
+
+        <!-- Number of Guests -->
+        <label for="adults">Number of Adults:</label>
+        <input type="number" id="adults" value="1" min="1">
+
+        <label for="children">Number of Children:</label>
+        <input type="number" id="children" value="0" min="0">
+
+        <!-- Calculate Total Button -->
+        <button onclick="calculateTotal()">Calculate Total</button>
+
+        <!-- Display Total Price -->
+        <div class="total" id="totalAmount"></div>
+    </div>
+    <div class="e1">
+        <a href="hotel1detail.html"><button type="submit" class="exit">EXIT</button></a>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            var roomTypePrice = parseFloat(document.getElementById("roomType").value);
+            var checkInDate = new Date(document.getElementById("checkIn").value);
+            var checkOutDate = new Date(document.getElementById("checkOut").value);
+            var adults = parseInt(document.getElementById("adults").value);
+            var children = parseInt(document.getElementById("children").value);
+
+            // Calculate the number of nights
+            var timeDiff = checkOutDate - checkInDate;
+            var days = timeDiff / (1000 * 3600 * 24);
+
+            // Validate dates
+            if (days <= 0) {
+                alert("Please select valid check-in and check-out dates.");
+                return;
+            }
+
+            // Calculate the total price based on room type, nights, and guests
+            var totalPrice = roomTypePrice * days;
+            var totalGuests = adults + children;
+
+            // Additional charges for extra guests (optional)
+            if (totalGuests > 2) {
+                totalPrice += (totalGuests - 2) * 20 * days;  // $20 per extra guest per night
+            }
+
+            // Display the total price
+            var totalAmountElement = document.getElementById("totalAmount");
+            totalAmountElement.innerHTML = "Total Price: $" + totalPrice.toFixed(2);
+            
+            // Ensure the total price section is visible
+            totalAmountElement.style.opacity = 1;
+        }
+    </script>
+    
+ 
+
+</body>
+
+</html>

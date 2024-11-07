@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div >
+        <a href="index.html"><button type="submit" class="btn7">BACK</button></a>
+    </div>
+    <div class="icon">
+        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+        <div class="like">
+        <i class="fa-regular fa-hea"></i>&nbsp&nbsp&nbsp&nbsp
+        <i class="fa fa-share-alt"></i>
+    </div>
+    </div>
+    <div>
+        <h1>
+            UK27 The Fern - An Ecotel Hotel, Belagavi,<br>
+            Karnataka.
+        </h1>
+        <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">Address: Ayodhya Nagar, Sadashiv Nagar, Belagavi, <br> Karnataka 590019</h3>
+        <div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="hampi" src="uk1.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="hampi" src="uk2.jpg" class="d-block w-100" alt="..." >
+                  </div>
+                  <div class="carousel-item">
+                    <img class="hampi" src="UK3.jpg" class="d-block w-100" alt="...">
+                  </div> 
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            </div>
+            </div>
+            <div class="btn">
+                <div class="btn1" style="border: solid 4px; height: 40px; align-items: center;width: 120px;"><i class="fa-solid fa-bath"> &nbsp&nbsp Hot Tub</i></div>
+                <div class="btn2" style="border: solid 4px; height: 40px; align-items: center;width: 200px;"><i class="fa-solid fa-mug-hot">&nbsp&nbsp Good Breakfast</i></div>
+            </div>
+            <div class="btn2" style="    border: solid 4px; margin-left: 30px;">
+                <i class="fa-solid fa-square-parking"></i> &nbsp&nbsp<B>FREE ON SITE PARKING  </B>
+            </div>
+            <div class="btn3" style="    border: solid 4px; margin-left: 30px;"><i class="fa-solid fa-shower"></i> &nbsp&nbsp <B>PRIVATE BATHROOM</B></div>
+            <div class="container">
+                <h1>Hotel Check-In/Out System</h1>
+                <div class="form-container">
+                    <input type="text" id="guestName" placeholder="Enter Guest Name">
+                    <button class="bt" onclick="checkIn()">Check In</button>
+                    <button class="bt" onclick="checkOut()">Check Out</button>
+                </div>
+                <h2>Current Guests</h2>
+                <ul id="guestList"></ul>
+            </div>
+            <div class="btn9">
+                <a href="reserve2.html"><button class="btn7" type="submit">Book Now</button></a>
+            </div>
+        
+            <script src="script.js"></script>
+</div>
+<footer class="footer">
+    
+</footer>
+
+</body>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .like{
+        display: flex;
+        justify-content: right ;
+        margin-right: 50px;
+        white-space: 20;
+    }
+    .btn{
+        margin-top: 30px;
+        display:flex ;
+     
+        padding: 50px;
+
+        justify-content: space-around;
+    }
+    .btn1{
+        margin-top: 20px;
+        display:grid ;
+        justify-content: space-between;
+        
+    }
+    .footer{
+        height: 50px;
+        
+        background-color:white;
+    }
+    .btn3{
+       
+        margin-top: 20px;
+    }
+    .icon{
+        margin-top: 30px;
+    }
+    .container {
+    max-width: 600px;
+    margin-top: 30px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.btn7:hover{
+    background-color: #28a745;
+    transform: scale(1.1);
+  transition: 0s;
+  box-shadow: 1px 1px 15px ;
+  border-radius: 10px;
+}
+button{
+    background-color: green;
+}
+.btn9{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 17px;
+    bottom: 0px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: transparent;
+}
+
+.bt:hover{
+    background-color: rgb(79, 139, 79);
+    
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+.hampi{
+    height: 650px;
+    width: 1500px;
+
+
+}
+ 
+</style> 
+<script>
+    let guests = [];
+
+function checkIn() {
+    const guestName = document.getElementById("guestName").value.trim();
+    if (guestName && !guests.includes(guestName)) {
+        guests.push(guestName);
+        document.getElementById("guestName").value = ""; // Clear input
+        updateGuestList();
+    } else {
+        alert("Please enter a valid guest name or the guest is already checked in.");
+    }
+}
+
+function checkOut() {
+    const guestName = document.getElementById("guestName").value.trim();
+    if (guestName && guests.includes(guestName)) {
+        guests = guests.filter(guest => guest !== guestName);
+        document.getElementById("guestName").value = ""; // Clear input
+        updateGuestList();
+    } else {
+        alert("Guest not found or invalid name.");
+    }
+}
+
+function updateGuestList() {
+    const guestList = document.getElementById("guestList");
+    guestList.innerHTML = ""; // Clear current list
+    guests.forEach(guest => {
+        const li = document.createElement("li");
+        li.textContent = guest;
+        guestList.appendChild(li);
+    });
+}
+
+</script>
+</html>
